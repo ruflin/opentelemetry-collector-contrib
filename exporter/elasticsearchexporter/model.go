@@ -45,7 +45,7 @@ func (m *encodeModel) encodeLog(resource pcommon.Resource, record plog.LogRecord
 	document.AddInt("TraceFlags", int64(record.Flags()))
 	document.AddString("SeverityText", record.SeverityText())
 	document.AddInt("SeverityNumber", int64(record.SeverityNumber()))
-	document.AddAttribute("Body", record.Body())
+	document.AddAttribute("message", record.Body())
 	document.AddAttributes("Attributes", record.Attributes())
 	document.AddAttributes("Resource", resource.Attributes())
 
